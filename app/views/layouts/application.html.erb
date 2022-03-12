@@ -10,13 +10,20 @@
   </head>
 
   <body>
+   <% # @current_user = User.find(session["user_id"]) %>
+   
+   <% if @current_user %>
+      Welcome!
+
+      <p><%= button_to "Log out", "/sessions/logout", method: :delete %></p>
+   <% else %>
     <p>
       <a href="/sessions/new">Log in</a>
     </p>
     <p>
       <a href="/users/new">Sign Up</a>
     </p>
-
+   <% end %>
     <p>
       <%= flash[:notice] %>
     </p>
