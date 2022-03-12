@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :tasks
   resources :users
+  resources :sessions
+
+  #root "companies#index"
 end
